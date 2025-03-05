@@ -6,7 +6,7 @@ on:
 jobs:
   trabajo1:
     runs-on: ubuntu-latest
-    
+
     services:
       mysql:
         image: mysql:5.7
@@ -15,5 +15,7 @@ jobs:
         ports:
           - 3306:3306
     steps:
+      - name: checkout
+        uses: actions/checkout@v2
       - name: listar archivos
         run: ls -la
