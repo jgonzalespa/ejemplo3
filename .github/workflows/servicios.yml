@@ -1,0 +1,19 @@
+name: workflow-servicios
+on:
+  push:
+    branches:
+      - jgonzales
+jobs:
+  trabajo1:
+    runs-on: ubuntu-latest
+    
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ROOT_PASSWORD: root
+        ports:
+          - 3306:3306
+    steps:
+      - name: listar archivos
+        run: ls -la
